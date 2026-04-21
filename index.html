@@ -102,6 +102,34 @@
             color: var(--sttc-clay);
         }
 
+        .menu-toggle {
+            display: none;
+            width: 46px;
+            height: 46px;
+            border: 1px solid rgba(182, 1, 0, 0.14);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.75);
+            color: var(--sttc-clay);
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            flex-direction: column;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 18px;
+            height: 2px;
+            background: currentColor;
+            border-radius: 999px;
+            transition: transform 0.25s ease, opacity 0.25s ease;
+        }
+
+        body.nav-open {
+            overflow: hidden;
+        }
+
         /* Hero Section */
         .hero {
             height: 100vh;
@@ -522,6 +550,63 @@
             background-color: var(--sttc-moss);
             transform: scale(1.02);
         }
+
+        @media (max-width: 1100px) {
+            nav {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            .hero {
+                min-height: 92vh;
+                height: auto;
+                padding: 130px 5% 90px;
+                align-items: flex-end;
+            }
+
+            .need-section,
+            .purpose-section,
+            .landmark-section,
+            .ecosystem-section,
+            .connect-section {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            .need-grid,
+            .landmark-shell,
+            .connect-shell {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .need-copy,
+            .landmark-copy {
+                max-width: none;
+                margin: 0;
+                padding-right: 0;
+                transform: none;
+            }
+
+            .need-visual,
+            .landmark-visual {
+                margin-right: 0;
+            }
+
+            .purpose-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .verticals-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .science-park-card {
+                right: -28%;
+                top: -92%;
+                width: min(85vw, 1100px);
+            }
+        }
         footer {
             padding: 60px 8%;
             background: var(--bg-color);
@@ -534,9 +619,82 @@
         }
 
         @media (max-width: 768px) {
-            nav { padding: 15px 5%; }
-            .nav-links { display: none; }
-            .hero h1 { font-size: 2.8rem; }
+            section[id] {
+                scroll-margin-top: 90px;
+            }
+
+            nav { padding: 12px 5%; }
+
+            .logo-container img {
+                height: 52px;
+            }
+
+            .menu-toggle {
+                display: inline-flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 82px;
+                left: 5%;
+                right: 5%;
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+                padding: 14px;
+                border: 1px solid rgba(182, 1, 0, 0.12);
+                border-radius: 18px;
+                background: rgba(250, 249, 246, 0.97);
+                box-shadow: 0 20px 48px rgba(62, 68, 75, 0.12);
+                opacity: 0;
+                pointer-events: none;
+                transform: translateY(-8px);
+                transition: opacity 0.25s ease, transform 0.25s ease;
+            }
+
+            body.nav-open .nav-links {
+                opacity: 1;
+                pointer-events: auto;
+                transform: translateY(0);
+            }
+
+            .nav-links a {
+                margin-left: 0;
+                padding: 12px 14px;
+                border-radius: 12px;
+                background: rgba(255, 255, 255, 0.8);
+            }
+
+            body.nav-open .menu-toggle span:nth-child(1) {
+                transform: translateY(6px) rotate(45deg);
+            }
+
+            body.nav-open .menu-toggle span:nth-child(2) {
+                opacity: 0;
+            }
+
+            body.nav-open .menu-toggle span:nth-child(3) {
+                transform: translateY(-6px) rotate(-45deg);
+            }
+
+            .hero {
+                min-height: 86vh;
+                padding: 118px 5% 70px;
+                background-position: 62% center;
+            }
+
+            .hero h1 { font-size: clamp(2.2rem, 9vw, 3.1rem); }
+
+            .hero p {
+                font-size: 1.02rem;
+                max-width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
             .purpose-section { padding: 88px 5%; }
             .purpose-grid { grid-template-columns: 1fr; }
             .need-section { padding: 118px 5% 88px; }
@@ -545,7 +703,10 @@
                 height: 110px;
             }
             .need-grid { grid-template-columns: 1fr; gap: 36px; }
-            .need-copy h2 { max-width: none; }
+            .need-copy h2,
+            .purpose-header h2,
+            .ecosystem-intro h2,
+            .form-panel h2 { max-width: none; }
             .need-copy { transform: none; }
             .need-visual { margin-right: 0; }
             .need-visual img { width: min(100%, 420px); }
@@ -559,12 +720,14 @@
                 right: auto;
                 top: auto;
                 transform: none;
-                width: min(100%, 360px);
-                margin: 32px auto 0;
+                width: min(100%, 320px);
+                margin: 16px auto 0;
                 text-align: center;
             }
             .science-park-card img {
+                width: min(100%, 320px);
                 margin: 0 auto;
+                opacity: 0.3;
             }
             .connect-section { padding: 88px 5% 70px; }
             .connect-shell { grid-template-columns: 1fr; }
@@ -572,6 +735,39 @@
             .qr-panel { padding-left: 24px; padding-right: 24px; }
             .form-panel { padding-top: 38px; padding-bottom: 38px; }
             .qr-panel { padding-top: 32px; padding-bottom: 32px; }
+            footer {
+                padding: 32px 5% 42px;
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding-top: 108px;
+            }
+
+            .need-section,
+            .purpose-section,
+            .landmark-section,
+            .ecosystem-section,
+            .connect-section {
+                padding-left: 18px;
+                padding-right: 18px;
+            }
+
+            .purpose-card,
+            .vertical-card,
+            .form-panel,
+            .qr-panel {
+                border-radius: 22px;
+            }
+
+            .purpose-card,
+            .vertical-card {
+                padding: 28px 22px;
+            }
         }
     </style>
 </head>
@@ -581,6 +777,11 @@
         <a href="#" class="logo-container">
             <img src="resources/Logo_flatwhite.png" alt="STTC Logo">
         </a>
+        <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <div class="nav-links">
             <a href="#purpose">Purpose</a>
             <a href="#ecosystem">Ecosystem</a>
@@ -718,6 +919,25 @@
         }
         window.addEventListener("scroll", reveal);
         reveal();
+
+        var menuToggle = document.querySelector(".menu-toggle");
+        var navLinks = document.querySelectorAll(".nav-links a");
+
+        if (menuToggle) {
+            menuToggle.addEventListener("click", function () {
+                var isOpen = document.body.classList.toggle("nav-open");
+                menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+            });
+        }
+
+        for (var j = 0; j < navLinks.length; j++) {
+            navLinks[j].addEventListener("click", function () {
+                document.body.classList.remove("nav-open");
+                if (menuToggle) {
+                    menuToggle.setAttribute("aria-expanded", "false");
+                }
+            });
+        }
     </script>
 </body>
 </html>
