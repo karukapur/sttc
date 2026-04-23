@@ -403,6 +403,105 @@
             opacity: 0.50;
         }
 
+        .events-section {
+            padding: 120px 8%;
+            background: var(--white);
+        }
+
+        .events-shell {
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+
+        .events-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 32px;
+            align-items: end;
+            margin-bottom: 42px;
+        }
+
+        .events-header h2 {
+            font-size: clamp(2.1rem, 4vw, 3.4rem);
+            line-height: 1.08;
+            color: var(--sttc-slate);
+            max-width: 620px;
+        }
+
+        .events-header p {
+            color: #5f6469;
+            max-width: 410px;
+            font-size: 1.02rem;
+        }
+
+        .event-feature {
+            display: grid;
+            grid-template-columns: minmax(280px, 0.72fr) minmax(340px, 1fr);
+            gap: 42px;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(250, 249, 246, 0.95), rgba(232, 213, 183, 0.28));
+            border: 1px solid rgba(182, 1, 0, 0.08);
+            border-radius: 28px;
+            padding: 34px;
+            box-shadow: 0 24px 65px rgba(62, 68, 75, 0.08);
+        }
+
+        .event-poster img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 18px;
+            box-shadow: 0 22px 48px rgba(62, 68, 75, 0.14);
+        }
+
+        .event-copy h3 {
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            line-height: 1.05;
+            color: var(--sttc-slate);
+            margin-bottom: 18px;
+            max-width: 620px;
+        }
+
+        .event-copy p {
+            color: #5f6469;
+            font-size: 1.05rem;
+            max-width: 590px;
+            margin-bottom: 22px;
+        }
+
+        .event-meta {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+            margin: 28px 0;
+        }
+
+        .event-meta div {
+            border-left: 2px solid rgba(182, 1, 0, 0.24);
+            padding-left: 14px;
+        }
+
+        .event-meta span {
+            display: block;
+            color: var(--sttc-moss);
+            font-size: 0.73rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 4px;
+        }
+
+        .event-meta strong {
+            color: var(--sttc-slate);
+            font-weight: 500;
+        }
+
+        .event-actions {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 36px;
+        }
+
         .connect-section {
             padding: 120px 8% 90px;
             background: var(--sttc-slate);
@@ -583,6 +682,7 @@
             .purpose-section,
             .landmark-section,
             .ecosystem-section,
+            .events-section,
             .connect-section {
                 padding-left: 5%;
                 padding-right: 5%;
@@ -590,9 +690,18 @@
 
             .need-grid,
             .landmark-shell,
+            .event-feature,
             .connect-shell {
                 grid-template-columns: 1fr;
                 gap: 40px;
+            }
+
+            .events-header {
+                display: block;
+            }
+
+            .events-header h2 {
+                margin-bottom: 16px;
             }
 
             .need-copy,
@@ -767,6 +876,7 @@
             .purpose-section,
             .landmark-section,
             .ecosystem-section,
+            .events-section,
             .connect-section {
                 padding-left: 18px;
                 padding-right: 18px;
@@ -774,14 +884,20 @@
 
             .purpose-card,
             .vertical-card,
+            .event-feature,
             .form-panel,
             .qr-panel {
                 border-radius: 22px;
             }
 
             .purpose-card,
-            .vertical-card {
+            .vertical-card,
+            .event-feature {
                 padding: 28px 22px;
+            }
+
+            .event-meta {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -800,6 +916,7 @@
         <div class="nav-links">
             <a href="#purpose">Purpose</a>
             <a href="#ecosystem">Ecosystem</a>
+            <a href="#events">Events</a>
             <a href="#connect">Connect</a>
         </div>
     </nav>
@@ -887,6 +1004,46 @@
                     <img src="resources/KH SP_trans.png" alt="Kaohsiung Science Park visual">
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section id="events" class="events-section">
+        <div class="events-shell">
+            <div class="events-header reveal">
+                <div>
+                    <span class="mission-label">Events</span>
+                    <h2>Meet the people building across Southern Taiwan.</h2>
+                </div>
+                <p>Talks, founder sessions, and community gatherings designed to make the region's tech ecosystem easier to enter and easier to navigate.</p>
+            </div>
+            <article class="event-feature reveal">
+                <div class="event-poster">
+                    <img src="resources/Arturs Vacans poster.png" alt="Founding event poster for Arturs Vacans speaking about startups in Southern Taiwan">
+                </div>
+                <div class="event-copy">
+                    <span class="mission-label">Founding Event</span>
+                    <h3>5 things nobody tells you about startups in Southern Taiwan</h3>
+                    <p>Join STTC for a founding conversation with Arturs Vacans, a full stack software and hardware engineer with experience across investment banking, semiconductors, and Taiwan's coworking ecosystem.</p>
+                    <div class="event-meta">
+                        <div>
+                            <span>Date</span>
+                            <strong>02 May 2026</strong>
+                        </div>
+                        <div>
+                            <span>Time</span>
+                            <strong>17:30-20:00</strong>
+                        </div>
+                        <div>
+                            <span>Location</span>
+                            <strong>Sasadra, Tainan</strong>
+                        </div>
+                    </div>
+                    <div class="event-actions">
+                        <a href="events.html" class="btn">View Events Page</a>
+                        <a href="https://forms.gle/UMqymDukuttUJwzt6" class="btn" target="_blank" rel="noopener">Register for Event</a>
+                    </div>
+                </div>
+            </article>
         </div>
     </section>
 
