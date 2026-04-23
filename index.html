@@ -484,6 +484,21 @@
             min-height: 130px;
         }
 
+        .form-status {
+            min-height: 24px;
+            color: rgba(250, 249, 246, 0.84);
+            font-size: 0.95rem;
+            margin-top: 4px;
+        }
+
+        .form-status.success {
+            color: #E8D5B7;
+        }
+
+        .form-status.error {
+            color: #FFD6D6;
+        }
+
         .qr-panel {
             background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(232, 213, 183, 0.45));
             padding: 42px 38px;
@@ -881,12 +896,13 @@
                 <span class="eyebrow">Connect with <span class="sttc-word">STTC</span></span>
                 <h2>Join the Ecosystem</h2>
                 <p>Whether you are a student, founder, or industry professional, your perspective is the catalyst for our collective growth.</p>
-                <form action="#" method="post" class="signup-form">
+                <form action="https://formspree.io/f/xvzddgdq" method="POST" class="signup-form">
                     <input type="text" name="name" placeholder="Name" required>
                     <input type="email" name="email" placeholder="Email" required>
                     <input type="tel" name="phone" placeholder="Phone Number">
-                    <textarea name="comments" placeholder="Comments about STTC"></textarea>
+                    <textarea name="message" placeholder="Comments about STTC"></textarea>
                     <button type="submit" class="btn">Submit</button>
+                    <p class="form-status" aria-live="polite"></p>
                 </form>
             </section>
 
@@ -936,6 +952,60 @@
                 if (menuToggle) {
                     menuToggle.setAttribute("aria-expanded", "false");
                 }
+            });
+        }
+
+        var signupForm = document.querySelector(".signup-form");
+
+        if (signupForm) {
+            var formStatus = signupForm.querySelector(".form-status");
+            var submitButton = signupForm.querySelector('button[type="submit"]');
+            var defaultButtonText = submitButton ? submitButton.textContent : "";
+
+            signupForm.addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                if (formStatus) {
+                    formStatus.textContent = "Sending...";
+                    formStatus.className = "form-status";
+                }
+
+                if (submitButton) {
+                    submitButton.disabled = true;
+                    submitButton.textContent = "Sending";
+                }
+
+                fetch(signupForm.action, {
+                    method: "POST",
+                    body: new FormData(signupForm),
+                    headers: {
+                        Accept: "application/json"
+                    }
+                })
+                    .then(function (response) {
+                        if (response.ok) {
+                            signupForm.reset();
+                            if (formStatus) {
+                                formStatus.textContent = "Thanks for signing up. We will be in touch soon.";
+                                formStatus.className = "form-status success";
+                            }
+                            return;
+                        }
+
+                        throw new Error("Form submission failed");
+                    })
+                    .catch(function () {
+                        if (formStatus) {
+                            formStatus.textContent = "Something went wrong. Please try again in a moment.";
+                            formStatus.className = "form-status error";
+                        }
+                    })
+                    .finally(function () {
+                        if (submitButton) {
+                            submitButton.disabled = false;
+                            submitButton.textContent = defaultButtonText;
+                        }
+                    });
             });
         }
     </script>
