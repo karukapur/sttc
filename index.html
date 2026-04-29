@@ -4,9 +4,9 @@
     <meta charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STTC | Southern Taiwan Tech Community</title>
-    <link rel="icon" type="image/png" href="resources/Logo.png">
-    <link rel="shortcut icon" href="resources/Logo.png">
-    <link rel="apple-touch-icon" href="resources/Logo.png">
+    <link rel="icon" type="image/png" href="resources/branding/sttc-logo-primary.png">
+    <link rel="shortcut icon" href="resources/branding/sttc-logo-primary.png">
+    <link rel="apple-touch-icon" href="resources/branding/sttc-logo-primary.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
@@ -138,7 +138,7 @@
             padding: 0 8%;
             /* Landscape.jpg replaces the old URL here */
             background: linear-gradient(to right, rgba(250, 249, 246, 0.85), rgba(250, 249, 246, 0.3)), 
-                        url('resources/Landscape.png') center/cover no-repeat;
+                        url('resources/homepage/southern-taiwan-hero-landscape.png') center/cover no-repeat;
         }
 
         .hero-content {
@@ -502,6 +502,287 @@
             margin-top: 36px;
         }
 
+        .story-section {
+            padding: 116px 8%;
+            background: linear-gradient(180deg, rgba(232, 213, 183, 0.14) 0%, rgba(255, 255, 255, 0.92) 100%);
+        }
+
+        .story-shell,
+        .faq-shell {
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+
+        .story-header,
+        .faq-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 28px;
+            margin-bottom: 42px;
+        }
+
+        .story-header h2,
+        .faq-header h2 {
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            line-height: 1.08;
+            color: var(--sttc-slate);
+            max-width: 620px;
+        }
+
+        .story-header p,
+        .faq-header p {
+            max-width: 420px;
+            color: #5f6469;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .gallery-card {
+            background: rgba(255, 255, 255, 0.82);
+            border: 1px solid rgba(182, 1, 0, 0.08);
+            border-radius: 26px;
+            overflow: hidden;
+            box-shadow: 0 20px 54px rgba(62, 68, 75, 0.08);
+        }
+
+        .gallery-card img {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-copy {
+            padding: 20px 20px 22px;
+        }
+
+        .gallery-copy h3 {
+            color: var(--sttc-slate);
+            font-size: 1.22rem;
+            margin-bottom: 8px;
+        }
+
+        .gallery-copy p {
+            color: #5f6469;
+            font-size: 0.95rem;
+        }
+
+        .story-notes {
+            margin-top: 16px;
+            color: var(--sttc-moss);
+            font-size: 0.88rem;
+            letter-spacing: 0.02em;
+        }
+
+        .testimonials-section {
+            padding: 104px 8%;
+            background: var(--white);
+        }
+
+        .testimonials-shell {
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 0.95fr) repeat(2, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .testimonial-card {
+            position: relative;
+            min-height: 340px;
+            border: 1px solid rgba(182, 1, 0, 0.1);
+            border-radius: 30px;
+            padding: 24px 24px 26px;
+            box-shadow: 0 16px 42px rgba(62, 68, 75, 0.08);
+            overflow: hidden;
+        }
+
+        .testimonial-card.featured {
+            color: var(--white);
+            background:
+                linear-gradient(180deg, rgba(182, 1, 0, 0.66), rgba(62, 68, 75, 0.74)),
+                url('resources/events/founding-event/founding-event-gallery-speaker-room.png') center/cover no-repeat;
+            border-color: rgba(182, 1, 0, 0.18);
+        }
+
+        .testimonial-card.featured::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(250, 249, 246, 0.02), rgba(62, 68, 75, 0.14));
+            pointer-events: none;
+        }
+
+        .testimonial-card.plain {
+            background: linear-gradient(180deg, rgba(250, 249, 246, 0.92), rgba(255, 255, 255, 1));
+        }
+
+        .testimonial-card-inner {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .testimonial-brand {
+            display: inline-flex;
+            align-items: center;
+            align-self: flex-start;
+            margin-bottom: 20px;
+            padding: 9px 12px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.88);
+            color: var(--sttc-slate);
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 1.6px;
+        }
+
+        .testimonial-card.featured .testimonial-brand {
+            background: rgba(255, 255, 255, 0.16);
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .testimonial-metrics {
+            display: grid;
+            gap: 16px;
+            margin-top: auto;
+        }
+
+        .testimonial-metric strong {
+            display: block;
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .testimonial-metric span {
+            display: block;
+            font-size: 0.92rem;
+            line-height: 1.4;
+            max-width: 240px;
+        }
+
+        .testimonial-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 18px;
+            color: var(--white);
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+
+        .testimonial-link:hover {
+            text-decoration: underline;
+        }
+
+        .testimonial-card blockquote {
+            color: var(--sttc-slate);
+            font-family: 'Lora', serif;
+            font-style: italic;
+            font-size: clamp(1.15rem, 1.7vw, 1.45rem);
+            line-height: 1.55;
+            letter-spacing: -0.02em;
+            margin-bottom: 18px;
+        }
+
+        .testimonial-person {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 999px;
+            flex-shrink: 0;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(135deg, rgba(182, 1, 0, 0.14), rgba(232, 213, 183, 0.9));
+            color: var(--sttc-clay);
+            font-family: 'Lora', serif;
+            font-size: 1rem;
+        }
+
+        .testimonial-meta strong {
+            display: block;
+            color: var(--sttc-slate);
+            font-size: 0.98rem;
+            margin-bottom: 3px;
+        }
+
+        .testimonial-meta span {
+            color: var(--sttc-moss);
+            font-size: 0.82rem;
+            line-height: 1.4;
+        }
+
+
+        .faq-section {
+            padding: 104px 8% 116px;
+            background: var(--white);
+        }
+
+        .faq-list {
+            display: grid;
+            gap: 14px;
+        }
+
+        .faq-item {
+            border: 1px solid rgba(182, 1, 0, 0.1);
+            border-radius: 22px;
+            background: linear-gradient(180deg, rgba(250, 249, 246, 0.9), rgba(255, 255, 255, 1));
+            box-shadow: 0 18px 44px rgba(62, 68, 75, 0.05);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            list-style: none;
+            width: 100%;
+            padding: 22px 24px;
+            border: none;
+            background: transparent;
+            color: var(--sttc-slate);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            cursor: pointer;
+        }
+
+        .faq-question::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-question span:last-child {
+            color: var(--sttc-clay);
+            font-size: 1.4rem;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        .faq-answer {
+            padding: 0 24px 24px;
+            color: #5f6469;
+            max-width: 860px;
+        }
+
         .connect-section {
             padding: 120px 8% 90px;
             background: var(--sttc-slate);
@@ -683,6 +964,9 @@
             .landmark-section,
             .ecosystem-section,
             .events-section,
+            .story-section,
+            .testimonials-section,
+            .faq-section,
             .connect-section {
                 padding-left: 5%;
                 padding-right: 5%;
@@ -696,11 +980,15 @@
                 gap: 40px;
             }
 
-            .events-header {
+            .events-header,
+            .story-header,
+            .faq-header {
                 display: block;
             }
 
-            .events-header h2 {
+            .events-header h2,
+            .story-header h2,
+            .faq-header h2 {
                 margin-bottom: 16px;
             }
 
@@ -718,6 +1006,11 @@
             }
 
             .purpose-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid,
+            .testimonials-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -740,6 +1033,39 @@
             border-top: 1px solid rgba(0,0,0,0.05);
             font-size: 0.8rem;
             color: #888;
+        }
+
+        .footer-social {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-left: auto;
+            margin-right: 28px;
+        }
+
+        .footer-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 999px;
+            border: 1px solid rgba(182, 1, 0, 0.16);
+            color: var(--sttc-clay);
+            background: rgba(182, 1, 0, 0.04);
+            transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .footer-social a:hover {
+            transform: translateY(-2px);
+            background: rgba(182, 1, 0, 0.1);
+            border-color: rgba(182, 1, 0, 0.28);
+        }
+
+        .footer-social svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
         }
 
         @media (max-width: 768px) {
@@ -838,6 +1164,9 @@
             .landmark-shell { grid-template-columns: 1fr; gap: 28px; }
             .landmark-copy p { max-width: none; }
             .ecosystem-section { padding: 88px 5%; }
+            .story-section,
+            .testimonials-section,
+            .faq-section { padding: 88px 5%; }
             .verticals-grid { grid-template-columns: 1fr; }
             .science-park-card {
                 position: relative;
@@ -862,7 +1191,7 @@
             footer {
                 padding: 32px 5% 42px;
                 flex-direction: column;
-                gap: 8px;
+                gap: 12px;
                 text-align: center;
             }
         }
@@ -877,6 +1206,9 @@
             .landmark-section,
             .ecosystem-section,
             .events-section,
+            .story-section,
+            .testimonials-section,
+            .faq-section,
             .connect-section {
                 padding-left: 18px;
                 padding-right: 18px;
@@ -885,6 +1217,8 @@
             .purpose-card,
             .vertical-card,
             .event-feature,
+            .gallery-card,
+            .testimonial-card,
             .form-panel,
             .qr-panel {
                 border-radius: 22px;
@@ -892,7 +1226,8 @@
 
             .purpose-card,
             .vertical-card,
-            .event-feature {
+            .event-feature,
+            .testimonial-card {
                 padding: 28px 22px;
             }
 
@@ -906,7 +1241,7 @@
 
     <nav>
         <a href="#" class="logo-container">
-            <img src="resources/Logo_flatwhite.png" alt="STTC Logo">
+            <img src="resources/branding/sttc-logo-navbar-light.png" alt="STTC Logo">
         </a>
         <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
             <span></span>
@@ -916,7 +1251,7 @@
         <div class="nav-links">
             <a href="#purpose">Purpose</a>
             <a href="#ecosystem">Ecosystem</a>
-            <a href="#events">Events</a>
+            <a href="events.html">Events</a>
             <a href="#connect">Connect</a>
         </div>
     </nav>
@@ -938,7 +1273,7 @@
                 <p>STTC exists to help close that gap: making it easier for students, builders, researchers, and operators in the South to find one another, exchange ideas, and build momentum together.</p>
             </div>
             <div class="need-visual reveal">
-                <img src="resources/Need.png" alt="Visual showing the need for a stronger networking ecosystem in Southern Taiwan">
+                <img src="resources/homepage/community-connection-illustration.png" alt="Visual showing the need for a stronger networking ecosystem in Southern Taiwan">
             </div>
         </div>
     </section>
@@ -967,7 +1302,7 @@
     <section class="landmark-section">
         <div class="landmark-shell">
             <div class="landmark-visual reveal">
-                <img src="resources/Bridge_front-Photoroom.png" alt="Southern Taiwan science park landmark illustration">
+                <img src="resources/homepage/southern-taiwan-landmark-illustration.png" alt="Southern Taiwan science park landmark illustration">
             </div>
             <div class="landmark-copy reveal">
                 <span class="mission-label">Rooted in the South</span>
@@ -1001,7 +1336,7 @@
                     </div>
                 </div>
                 <div class="science-park-card reveal">
-                    <img src="resources/KH SP_trans.png" alt="Kaohsiung Science Park visual">
+                    <img src="resources/homepage/kaohsiung-science-park-overlay.png" alt="Kaohsiung Science Park visual">
                 </div>
             </div>
         </div>
@@ -1018,7 +1353,7 @@
             </div>
             <article class="event-feature reveal">
                 <div class="event-poster">
-                    <img src="resources/Arturs Vacans poster.png" alt="Founding event poster for Arturs Vacans speaking about startups in Southern Taiwan">
+                    <img src="resources/events/founding-event/founding-event-poster-arturs-vacans.png" alt="Founding event poster for Arturs Vacans speaking about startups in Southern Taiwan">
                 </div>
                 <div class="event-copy">
                     <span class="mission-label">Founding Event</span>
@@ -1047,6 +1382,39 @@
         </div>
     </section>
 
+    <section id="gallery" class="story-section">
+        <div class="story-shell">
+            <div class="story-header reveal">
+                <div>
+                    <span class="mission-label">Gallery</span>
+                    <h2>Early visual proof that the community is starting to gather.</h2>
+                </div>
+                <p>A small, editable gallery for the founding event. The structure is ready now, and the library can grow cleanly as future gatherings happen.</p>
+            </div>
+            <div class="gallery-grid" id="gallery-grid"></div>
+            <p class="story-notes reveal">For now, the gallery uses starter visuals for the May 2 founding event so the section feels alive from day one.</p>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials-section">
+        <div class="testimonials-shell">
+            <div class="testimonials-grid" id="testimonials-grid"></div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq-section">
+        <div class="faq-shell">
+            <div class="faq-header reveal">
+                <div>
+                    <span class="mission-label">FAQ</span>
+                    <h2>Answer the first questions people are likely to have.</h2>
+                </div>
+                <p>Early communities usually need clarity more than complexity. These answers help reduce friction for students, founders, and curious first-time attendees.</p>
+            </div>
+            <div class="faq-list" id="faq-list"></div>
+        </div>
+    </section>
+
     <section id="connect" class="connect-section">
         <div class="connect-shell">
             <section class="form-panel reveal">
@@ -1065,7 +1433,7 @@
 
             <aside class="qr-panel reveal">
                 <div class="qr-card">
-                    <img src="resources/sttc.connect.png" alt="STTC Linktree QR code">
+                    <img src="resources/community/sttc-linktree-qr.png" alt="STTC Linktree QR code">
                     <h3>Linktree QR Code</h3>
                     <p>Scan this QR code to open the <span class="sttc-word">STTC</span> Linktree and stay connected with the community.</p>
                 </div>
@@ -1075,6 +1443,18 @@
 
     <footer>
         <div>&copy; 2026 Southern Taiwan Tech Council</div>
+        <div class="footer-social" aria-label="STTC social links">
+            <a href="https://www.instagram.com/sttc.connect/" target="_blank" rel="noopener" aria-label="Follow STTC on Instagram">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.8A3.95 3.95 0 0 0 3.8 7.75v8.5a3.95 3.95 0 0 0 3.95 3.95h8.5a3.95 3.95 0 0 0 3.95-3.95v-8.5a3.95 3.95 0 0 0-3.95-3.95h-8.5Zm8.95 1.35a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.8A3.2 3.2 0 1 0 12 15.2 3.2 3.2 0 0 0 12 8.8Z"/>
+                </svg>
+            </a>
+            <a href="https://www.linkedin.com/company/southern-taiwan-technology-council/" target="_blank" rel="noopener" aria-label="Follow STTC on LinkedIn">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6.94 8.5H3.56V20h3.38V8.5Zm.22-3.56A1.97 1.97 0 1 0 3.2 4.94a1.97 1.97 0 0 0 3.96 0ZM20.8 12.87c0-3.44-1.84-5.04-4.3-5.04-1.98 0-2.87 1.09-3.37 1.85V8.5H9.75c.04.78 0 11.5 0 11.5h3.38v-6.42c0-.34.02-.68.12-.92.27-.68.87-1.38 1.88-1.38 1.33 0 1.86 1.02 1.86 2.52V20H20.8v-7.13Z"/>
+                </svg>
+            </a>
+        </div>
         <div>Innovating with Intent.</div>
     </footer>
 
@@ -1111,6 +1491,147 @@
                 }
             });
         }
+
+        var galleryItems = [
+            {
+                image: "resources/events/founding-event/founding-event-gallery-speaker-room.png",
+                title: "Founding talk atmosphere",
+                description: "A warm, intimate view of the first STTC gathering taking shape around a focused speaker and an attentive room."
+            },
+            {
+                image: "resources/events/founding-event/founding-event-gallery-networking.png",
+                title: "Networking moments",
+                description: "The kind of informal conversation space STTC wants to normalize across Southern Taiwan's tech community."
+            },
+            {
+                image: "resources/events/founding-event/founding-event-gallery-qa.png",
+                title: "Q&A and exchange",
+                description: "A closer look at the thoughtful, discussion-led tone the founding event is designed to create."
+            }
+        ];
+
+        var testimonialItems = [
+            {
+                type: "featured",
+                brand: "STTC Founding Event",
+                stats: [
+                    {
+                        value: "02",
+                        label: "May 2026 founding event launch"
+                    },
+                    {
+                        value: "1st",
+                        label: "public gathering for the community"
+                    },
+                    {
+                        value: "South",
+                        label: "focused conversation in Tainan"
+                    }
+                ],
+                cta: "The first community story starts here"
+            },
+            {
+                type: "quote",
+                brand: "For Attendee Voices",
+                status: "Ready for May 2",
+                quote: "The strongest early testimonials will probably sound simple: I met people I would not have otherwise met, and the room made Southern Taiwan's tech scene feel more tangible.",
+                initials: "AV",
+                author: "Founding event attendee",
+                role: "Suggested tone for post-event quotes"
+            },
+            {
+                type: "quote",
+                brand: "For Partner Feedback",
+                status: "Easy to update",
+                quote: "What should make this section work later is specificity. A short reflection about the people in the room, the quality of discussion, or the South's momentum will feel much more believable than generic praise.",
+                initials: "ST",
+                author: "Community or partner perspective",
+                role: "Replace with real feedback after the event"
+            }
+        ];
+
+        var faqItems = [
+            {
+                question: "What is STTC at this stage?",
+                answer: "STTC is an early-stage community initiative focused on strengthening connection across Southern Taiwan's technology ecosystem through events, conversations, and visible community infrastructure."
+            },
+            {
+                question: "Who should come to an STTC event?",
+                answer: "Students, founders, engineers, researchers, operators, and anyone curious about the South's innovation ecosystem are welcome. The goal is to make the network easier to enter, not harder."
+            },
+            {
+                question: "Is STTC only for startups?",
+                answer: "No. Startups are part of the picture, but STTC is also interested in the wider ecosystem around research, industry, semiconductors, AI, sustainability, and community-building."
+            },
+            {
+                question: "How often will events happen?",
+                answer: "The founding event is the first public step on May 2, 2026. Future programming is still being shaped, so the site keeps the calendar discreet until a steady rhythm is established."
+            }
+        ];
+
+        function renderGallery() {
+            var galleryGrid = document.getElementById("gallery-grid");
+            if (!galleryGrid) {
+                return;
+            }
+
+            var galleryMarkup = "";
+            for (var i = 0; i < galleryItems.length; i++) {
+                galleryMarkup += '<article class="gallery-card reveal"><img src="' + galleryItems[i].image + '" alt="' + galleryItems[i].title + '"><div class="gallery-copy"><h3>' + galleryItems[i].title + '</h3><p>' + galleryItems[i].description + "</p></div></article>";
+            }
+            galleryGrid.innerHTML = galleryMarkup;
+        }
+
+        function renderTestimonials() {
+            var testimonialsGrid = document.getElementById("testimonials-grid");
+            if (!testimonialsGrid) {
+                return;
+            }
+
+            var testimonialMarkup = "";
+            for (var i = 0; i < testimonialItems.length; i++) {
+                if (testimonialItems[i].type === "featured") {
+                    var metricsMarkup = "";
+                    for (var k = 0; k < testimonialItems[i].stats.length; k++) {
+                        metricsMarkup += '<div class="testimonial-metric"><strong>' + testimonialItems[i].stats[k].value + '</strong><span>' + testimonialItems[i].stats[k].label + '</span></div>';
+                    }
+
+                    testimonialMarkup += '<article class="testimonial-card featured reveal"><div class="testimonial-card-inner"><div class="testimonial-brand">' + testimonialItems[i].brand + '</div><div class="testimonial-metrics">' + metricsMarkup + '</div><a class="testimonial-link" href="events.html">' + testimonialItems[i].cta + ' <span aria-hidden="true">→</span></a></div></article>';
+                } else {
+                    testimonialMarkup += '<article class="testimonial-card plain reveal"><div class="testimonial-card-inner"><blockquote>"' + testimonialItems[i].quote + '"</blockquote><div class="testimonial-person"><div class="testimonial-avatar">' + testimonialItems[i].initials + '</div><div class="testimonial-meta"><strong>' + testimonialItems[i].author + '</strong><span>' + testimonialItems[i].role + '</span></div></div></div></article>';
+                }
+            }
+            testimonialsGrid.innerHTML = testimonialMarkup;
+        }
+
+        function renderFaqs() {
+            var faqList = document.getElementById("faq-list");
+            if (!faqList) {
+                return;
+            }
+
+            var faqMarkup = "";
+            for (var i = 0; i < faqItems.length; i++) {
+                var isOpen = i === 0;
+                faqMarkup += '<details class="faq-item reveal"' + (isOpen ? " open" : "") + '><summary class="faq-question"><span>' + faqItems[i].question + '</span><span>' + (isOpen ? "−" : "+") + '</span></summary><div class="faq-answer"><p>' + faqItems[i].answer + "</p></div></details>";
+            }
+            faqList.innerHTML = faqMarkup;
+
+            var faqDetails = faqList.querySelectorAll(".faq-item");
+            for (var i = 0; i < faqDetails.length; i++) {
+                faqDetails[i].addEventListener("toggle", function () {
+                    var icon = this.querySelector(".faq-question span:last-child");
+                    if (icon) {
+                        icon.textContent = this.open ? "−" : "+";
+                    }
+                });
+            }
+        }
+
+        renderGallery();
+        renderTestimonials();
+        renderFaqs();
+        reveal();
 
         var signupForm = document.querySelector(".signup-form");
 
