@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events | STTC</title>
-    <link rel="icon" type="image/png" href="resources/Logo.png">
-    <link rel="shortcut icon" href="resources/Logo.png">
-    <link rel="apple-touch-icon" href="resources/Logo.png">
+    <link rel="icon" type="image/png" href="resources/branding/sttc-logo-primary.png">
+    <link rel="shortcut icon" href="resources/branding/sttc-logo-primary.png">
+    <link rel="apple-touch-icon" href="resources/branding/sttc-logo-primary.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
@@ -204,6 +204,109 @@
             margin-bottom: 22px;
         }
 
+        .calendar-section {
+            margin-top: 36px;
+        }
+
+        .calendar-card {
+            display: grid;
+            grid-template-columns: minmax(280px, 0.9fr) minmax(340px, 1.1fr);
+            gap: 24px;
+            border: 1px solid rgba(182, 1, 0, 0.08);
+            border-radius: 26px;
+            background: rgba(255, 255, 255, 0.76);
+            box-shadow: 0 20px 54px rgba(62, 68, 75, 0.08);
+            padding: 28px;
+        }
+
+        .calendar-intro {
+            padding-right: 12px;
+        }
+
+        .calendar-intro h2 {
+            color: var(--sttc-slate);
+            font-size: clamp(1.9rem, 3vw, 2.6rem);
+            line-height: 1.08;
+            margin-bottom: 12px;
+        }
+
+        .calendar-intro p {
+            color: #5f6469;
+            margin-bottom: 18px;
+            max-width: 430px;
+        }
+
+        .calendar-tag {
+            display: inline-block;
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: rgba(182, 1, 0, 0.07);
+            color: var(--sttc-clay);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .calendar-list {
+            display: grid;
+            gap: 14px;
+        }
+
+        .calendar-item {
+            display: grid;
+            grid-template-columns: 86px minmax(0, 1fr);
+            gap: 16px;
+            align-items: center;
+            padding: 16px 18px;
+            border-radius: 18px;
+            background: rgba(250, 249, 246, 0.9);
+            border: 1px solid rgba(62, 68, 75, 0.06);
+        }
+
+        .calendar-date {
+            text-align: center;
+            padding: 12px 10px;
+            border-radius: 16px;
+            background: var(--white);
+            border: 1px solid rgba(182, 1, 0, 0.1);
+        }
+
+        .calendar-date strong {
+            display: block;
+            color: var(--sttc-slate);
+            font-size: 1.45rem;
+            line-height: 1;
+        }
+
+        .calendar-date span {
+            display: block;
+            color: var(--sttc-moss);
+            font-size: 0.8rem;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            margin-top: 6px;
+        }
+
+        .calendar-item h3 {
+            color: var(--sttc-slate);
+            font-size: 1.08rem;
+            margin-bottom: 4px;
+        }
+
+        .calendar-item p {
+            color: #5f6469;
+            font-size: 0.95rem;
+        }
+
+        .calendar-item small {
+            display: inline-block;
+            margin-top: 8px;
+            color: var(--sttc-moss);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
         .event-meta {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -256,8 +359,42 @@
             color: rgba(250, 249, 246, 0.74);
             display: flex;
             justify-content: space-between;
+            align-items: center;
             gap: 18px;
             font-size: 0.9rem;
+        }
+
+        .footer-social {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-left: auto;
+            margin-right: 28px;
+        }
+
+        .footer-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 999px;
+            border: 1px solid rgba(250, 249, 246, 0.18);
+            color: #faf9f6;
+            background: rgba(250, 249, 246, 0.06);
+            transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .footer-social a:hover {
+            transform: translateY(-2px);
+            background: rgba(250, 249, 246, 0.14);
+            border-color: rgba(250, 249, 246, 0.3);
+        }
+
+        .footer-social svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
         }
 
         @media (max-width: 1100px) {
@@ -269,7 +406,8 @@
             }
 
             .events-hero,
-            .event-card {
+            .event-card,
+            .calendar-card {
                 grid-template-columns: 1fr;
             }
         }
@@ -332,8 +470,13 @@
                 grid-template-columns: 1fr;
             }
 
+            .calendar-item {
+                grid-template-columns: 1fr;
+            }
+
             footer {
                 flex-direction: column;
+                text-align: center;
             }
         }
 
@@ -358,7 +501,7 @@
 <body>
     <nav>
         <a href="index.html" class="logo-container">
-            <img src="resources/Logo_flatwhite.png" alt="STTC Logo">
+            <img src="resources/branding/sttc-logo-navbar-light.png" alt="STTC Logo">
         </a>
         <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
             <span></span>
@@ -385,7 +528,7 @@
 
             <article class="event-card reveal">
                 <div class="event-poster">
-                    <img src="resources/Arturs Vacans poster.png" alt="Founding event poster for Arturs Vacans speaking about startups in Southern Taiwan">
+                    <img src="resources/events/founding-event/founding-event-poster-arturs-vacans.png" alt="Founding event poster for Arturs Vacans speaking about startups in Southern Taiwan">
                 </div>
                 <div class="event-copy">
                     <span class="mission-label">Founding Event</span>
@@ -408,11 +551,68 @@
                     <a href="https://forms.gle/UMqymDukuttUJwzt6" class="btn" target="_blank" rel="noopener">Register for Event</a>
                 </div>
             </article>
+
+            <section class="calendar-section reveal">
+                <div class="calendar-card">
+                    <div class="calendar-intro">
+                        <span class="calendar-tag">Programming in formation</span>
+                        <h2>A discreet public calendar, kept close to what is actually confirmed.</h2>
+                        <p>The events page is the right place for scheduling detail. For now, that means one confirmed gathering, a follow-up recap moment, and space for whatever comes next.</p>
+                    </div>
+                    <div class="calendar-list">
+                        <article class="calendar-item">
+                            <div class="calendar-date">
+                                <strong>02</strong>
+                                <span>May</span>
+                            </div>
+                            <div>
+                                <h3>Founding Event</h3>
+                                <p>5 things nobody tells you about startups in Southern Taiwan</p>
+                                <small>Confirmed · Sasadra, Tainan · 17:30-20:00</small>
+                            </div>
+                        </article>
+                        <article class="calendar-item">
+                            <div class="calendar-date">
+                                <strong>03</strong>
+                                <span>May</span>
+                            </div>
+                            <div>
+                                <h3>Post-event recap</h3>
+                                <p>A lightweight slot for publishing photos, reflections, or a short community summary after the founding event.</p>
+                                <small>Editorial placeholder</small>
+                            </div>
+                        </article>
+                        <article class="calendar-item">
+                            <div class="calendar-date">
+                                <strong>TBD</strong>
+                                <span>Next</span>
+                            </div>
+                            <div>
+                                <h3>Next community touchpoint</h3>
+                                <p>Reserved space for the next conversation, meetup, or founder session once programming is confirmed.</p>
+                                <small>To be announced</small>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
 
     <footer>
         <div>&copy; 2026 Southern Taiwan Tech Council</div>
+        <div class="footer-social" aria-label="STTC social links">
+            <a href="https://www.instagram.com/sttc.connect/" target="_blank" rel="noopener" aria-label="Follow STTC on Instagram">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.8A3.95 3.95 0 0 0 3.8 7.75v8.5a3.95 3.95 0 0 0 3.95 3.95h8.5a3.95 3.95 0 0 0 3.95-3.95v-8.5a3.95 3.95 0 0 0-3.95-3.95h-8.5Zm8.95 1.35a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.8A3.2 3.2 0 1 0 12 15.2 3.2 3.2 0 0 0 12 8.8Z"/>
+                </svg>
+            </a>
+            <a href="https://www.linkedin.com/company/southern-taiwan-technology-council/" target="_blank" rel="noopener" aria-label="Follow STTC on LinkedIn">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6.94 8.5H3.56V20h3.38V8.5Zm.22-3.56A1.97 1.97 0 1 0 3.2 4.94a1.97 1.97 0 0 0 3.96 0ZM20.8 12.87c0-3.44-1.84-5.04-4.3-5.04-1.98 0-2.87 1.09-3.37 1.85V8.5H9.75c.04.78 0 11.5 0 11.5h3.38v-6.42c0-.34.02-.68.12-.92.27-.68.87-1.38 1.88-1.38 1.33 0 1.86 1.02 1.86 2.52V20H20.8v-7.13Z"/>
+                </svg>
+            </a>
+        </div>
         <div>Innovating with Intent.</div>
     </footer>
 
